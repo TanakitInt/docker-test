@@ -1,0 +1,64 @@
+#### docker ####
+
+### docker images ###
+
+Dockerfile
+--------
+FROM logstash:7.9.3
+COPY ojdbc6.jar /usr/share/logstash/logstash-core/lib/jars/ojdbc6.jar
+RUN bin/logstash-plugin install logstash-filter-elapsed
+--------
+
+#build image
+docker build -t <image:version> <location>
+
+#pull image from the internet
+docker pull <image:version>
+
+#show docker image
+docker images 
+
+#remove docker images
+docker rmi <id/docker_image_name>
+
+#load image file to docker
+docker load --input <image_name>
+
+#export docker to image file
+docker save -o <image_name> <docker_image_name:version>
+
+### docker container ###
+
+#show running container
+docker ps
+
+#show all container
+docker ps -a
+
+#remove container
+docker rm <id/image_name>
+
+### docker network ###
+
+#show all network
+docker network ls
+
+#show network config
+docker network inspect <id/network_name>
+
+### docker compose ###
+
+#start docker
+docker compose -f <file_name> up -d
+
+#stop docker
+docker compose -f <file_name> down
+
+### docker logs ###
+
+docker logs -f <docker_name>
+
+
+
+
+
