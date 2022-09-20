@@ -58,7 +58,7 @@ docker compose -f <file_name> down
 
 docker logs -f <docker_name>
 
+### docker container terminal ###
 
-
-
+docker exec -it <container_name> bash
 
